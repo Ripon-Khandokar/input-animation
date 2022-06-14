@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Animation</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        color:white;
+        font-size: 19px;
+        background-color:rgb(21, 30, 12)
+    }
+    .container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        gap:2em;
+    }
+    .input-box {
+        width: 250px;
+        position: relative;
+    }
+    .input-box input{
+        background-color:rgb(21, 30, 12);
+        outline:none;
+        padding: 10px;
+        border:1px solid rgb(13, 99, 39);
+        width:100%;
+        font-size: 1em;
+        color: white;
+        border-radius: 0.2em;
+    }
+    .input-box span{
+        position: absolute;
+        left:0;
+        color:gray;
+        padding: 10px;
+        pointer-events:none;
+        transition: 0.2s;
+
+    }
+    .input-box input:focus ~ span,
+    .input-box input:valid ~ span
+    {
+        color:aqua;
+        transform: translateX(10px) translateY(-10px);
+        padding: 0px 10px;
+        background-color:rgb(21, 30, 12);
+        border-left: 1px solid aqua;
+        border-right: 1px solid aqua;
+        font-size: 15px;
+        letter-spacing: 0.2em;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="input-box">
+            <input type="text" required="required">
+            <span>First Name</span>
+        </div>
+        <div class="input-box">
+            <input type="text" required="required">
+            <span>First Name</span>
+
+        </div>
+    </div>
+</body>
+</html>
